@@ -18,7 +18,6 @@ setup () {
 }
 
 @test 'cat bundle | sh' {
-    skip "This will fail"
     run sh -c 'cat bundle | sh'
     [ "$output" = "Hello world." ]
     [ "$status" -eq 0 ]

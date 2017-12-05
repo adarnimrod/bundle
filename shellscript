@@ -1,5 +1,6 @@
 #!/bin/sh
 set -eu
-uudecode "$0"
+uudecode << EOF
+INSERT BINARY HERE
+EOF
 ./output
-exit

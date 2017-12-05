@@ -1,9 +1,6 @@
-bundle: hello.uu shellscript
-	cat shellscript hello.uu > bundle
-	chmod 755 bundle
-
-hello.uu: hello
-	uuencode hello output > hello.uu
+bundle: hello shellscript
+	awk '{if ($$0 == "INSERT BINARY HERE") {system("uuencode -m hello output")} else {print $$0}}' shellscript > bundle
+	chmod +x bundle
 
 hello: hello.c
 	gcc -o hello hello.c
