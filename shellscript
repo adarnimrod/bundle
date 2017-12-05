@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+uudecode "$0"
+./output
+exit
